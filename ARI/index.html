@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewata Homestay - Bali</title>
+    <meta name="description" content="Dewata Homestay - Pengalaman menginap unik dengan sentuhan budaya Bali dan kenyamanan modern.">
+    <meta name="keywords" content="homestay bali, dewata homestay, penginapan bali, wisata bali">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <!-- Google Fonts for Oriental/Elegant feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #8B0000; /* Deep Red / Oriental Red */
+            --secondary-color: #D4AF37; /* Gold */
+            --background-color: #FFF8E7; /* Cosmic Latte / Warm White */
+            --text-color: #2C2C2C;
+            --accent-green: #2E5936; /* Jade Green for nature accents */
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-color);
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-6 py-2 rounded-md hover:bg-red-900 transition-colors duration-300 font-bold border border-[var(--primary-color)];
+        }
+        .btn-outline {
+            @apply border border-[var(--primary-color)] text-[var(--primary-color)] px-6 py-2 rounded-md hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-300;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md overflow-hidden border-t-4 border-[var(--secondary-color)];
+        }
+        .oriental-pattern {
+            background-image: radial-gradient(var(--secondary-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.6s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    }
+    </style>
+</head>
+<body class="bg-[var(--background-color)] min-h-screen flex flex-col">
+    <div id="root"></div>
+    
+    <script src="utils/imageFallback.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/LocationPreview.js"></script>
+    <script type="text/babel" src="components/HistorySection.js"></script>
+    <script type="text/babel" src="components/ActivitiesSection.js"></script>
+    <script type="text/babel" src="components/RoomPackages.js"></script>
+    <script type="text/babel" src="components/BookingForm.js"></script>
+    <script type="text/babel" src="components/QuickBooking.js"></script>
+    <script type="text/babel" src="pages/Home.js"></script>
+    <script type="text/babel" src="pages/Experience.js"></script>
+    <script type="text/babel" src="pages/Reservation.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
